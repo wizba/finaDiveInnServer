@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 
 
 var routes = require('./routes/routes.js');
-routes(app);
+routes('/',app);
 let server =app.listen(PORT, () => {
   console.log(`Example app listening  http://localhost:${PORT}`)
 })
