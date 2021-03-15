@@ -22,7 +22,7 @@ const mongoose = require("mongoose") // new
 //mongodb://softwareDev:HnxwY0jl96W0UgIC@clustermasjeed1-shard-00-00-ekpfe.mongodb.net:27017,clustermasjeed1-shard-00-01-ekpfe.mongodb.net:27017,clustermasjeed1-shard-00-02-ekpfe.mongodb.net:27017/test?ssl=true&replicaSet=ClusterMasjeed1-shard-0&authSource=admin&retryWrites=true
 //connection='mongodb://127.0.0.1:27017/DiveI'
 connection="mongodb+srv://softwareDev:HnxwY0jl96W0UgIC@deveindatabase.dbk2t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true ,useUnifiedTopology: true}).then(function(){
+mongoose.connect(connection, { useNewUrlParser: true ,useUnifiedTopology: true}).then(function(){
     console.log('connected successfully')
 }, function(err) {
     console.log(err.message) 
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 
 
 var routes = require('./routes/routes.js');
-routes('/',app);
+routes(app);
 let server =app.listen(PORT, () => {
   console.log(`Example app listening  http://localhost:${PORT}`)
 })
