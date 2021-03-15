@@ -253,3 +253,7 @@ exports.getAllOrders= (req,res) =>{
       db.Resturant.findByIdAndUpdate({ _id: req.body.resturant },{$push:{manu:manu}} ,{ new: true })
     })
   }
+
+  exports.hello=(req,res)=>{
+      res.json({greet:'hello works'})
+  }

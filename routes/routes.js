@@ -3,6 +3,7 @@ const { db } = require('../models/order.model.js');
 module.exports = (app)=>{
 //register diner
  app.route('/diner').post(dinerHandler.createDiner);
+ app.route('/greet').post(dinerHandler.hello);
 
  app.route('/restaurant').post(dinerHandler.createResturant);
  app.route('/order').post(dinerHandler.createOrder);
