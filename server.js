@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 var bodyParser = require('body-parser')
 const cors = require("cors"); 
-const dinerHandler= require('.././Dive_inn_API/controllers/diner.cotroller.js');
+const dinerHandler= require('./controllers/diner.cotroller.js');
 var socketIO = require('socket.io');
 var PORT = process.env.PORT || 3000;
 
