@@ -33,27 +33,27 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/g',dinerHandler.hello);
-app.get('/g',dinerHandler.hello);
-app.post('/diner',dinerHandler.createDiner);
- app.post('/greet',dinerHandler.hello);
+// app.get('/g',dinerHandler.hello);
+// app.get('/g',dinerHandler.hello);
+// app.post('/diner',dinerHandler.createDiner);
+//  app.post('/greet',dinerHandler.hello);
 
- app.post('/restaurant',dinerHandler.createResturant);
- app.post('/order',dinerHandler.createOrder);
- app.get('/diner/:id',dinerHandler.getUserAndOrder);
- app.delete('/restuarant/:id',dinerHandler.delete);
- app.get('/restuarant/:id',dinerHandler.getResturents);
- app.get('/restuarant',dinerHandler.getAllResturents); 
- //pass customer and restuarant id in the body
- app.route('/orders').get(dinerHandler.getAllOrders);
-//pass restuarant id in the body
-// return 
- app.post('/manu',dinerHandler.createManu);
- //login to the system
- app.post('/diner/login',dinerHandler.loginDiner);
- app.get('/restuarant/name/:name',dinerHandler.getResturentByname);
- app.get('/restuarant/name/:name/id/:id',dinerHandler.getResturentBynameID);
- app.put('/resturants/order/:id',dinerHandler.updateOrder)
+//  app.post('/restaurant',dinerHandler.createResturant);
+//  app.post('/order',dinerHandler.createOrder);
+//  app.get('/diner/:id',dinerHandler.getUserAndOrder);
+//  app.delete('/restuarant/:id',dinerHandler.delete);
+//  app.get('/restuarant/:id',dinerHandler.getResturents);
+//  app.get('/restuarant',dinerHandler.getAllResturents); 
+//  //pass customer and restuarant id in the body
+//  app.route('/orders').get(dinerHandler.getAllOrders);
+// //pass restuarant id in the body
+// // return 
+//  app.post('/manu',dinerHandler.createManu);
+//  //login to the system
+//  app.post('/diner/login',dinerHandler.loginDiner);
+//  app.get('/restuarant/name/:name',dinerHandler.getResturentByname);
+//  app.get('/restuarant/name/:name/id/:id',dinerHandler.getResturentBynameID);
+//  app.put('/resturants/order/:id',dinerHandler.updateOrder)
 var routes = require('./routes/routes.js');
 routes(app);
 let server =app.listen(PORT, () => {
