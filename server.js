@@ -86,5 +86,8 @@ io.on('connection', (socket) => {
       io.emit('orderProgress',data)
     });
     
+    socket.on('test', (data) => {
+      console.log(data);
+    });
     socket.on('disconnect', () => console.log('Client disconnected'));
 });

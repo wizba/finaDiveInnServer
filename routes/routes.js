@@ -10,6 +10,7 @@ module.exports = (app)=>{
  app.route('/diner/:id').get(dinerHandler.getUserAndOrder);
  app.route('/restuarant/:id').delete(dinerHandler.delete);
  app.route('/restuarant/:id').get(dinerHandler.getResturents);
+ app.route('/:id').put(dinerHandler.update);
  app.route('/restuarant').get(dinerHandler.getAllResturents); 
  //pass customer and restuarant id in the body
  app.route('/orders').get(dinerHandler.getAllOrders);

@@ -257,3 +257,28 @@ exports.getAllOrders= (req,res) =>{
   exports.hello=(req,res)=>{
       res.json({greet:'hello works'})
   }
+
+
+  exports.update= (req,res) =>{
+    db.Resturant.findByIdAndUpdate(req.params.id,req.body,{ new: true },function(err, result) {
+      if (err) {
+          res.status(400).json(err);
+      } else {
+         
+        db.Resturant.find()
+          .populate('orders')
+          .populate('manu')
+          .then((resturant)=>{
+     
+            // If we were able to successfully find an Restuarant with the given id, send it back to the client
+            res.json(resturant);
+           })
+           .catch((err)=>{
+             // If an error occurred, send it to the client
+             res.json(err);
+           })
+      }
+    })
+    
+    
+  }
